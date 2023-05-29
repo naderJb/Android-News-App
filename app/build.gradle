@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.finder.androidnewsapp"
-        minSdk 24
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -24,11 +24,11 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "BASE_URL", '"https://newsapi.org/v2/"'
-            buildConfigField "String", "API_KEY", '"c9cd499657664ae5a355ace15d7d16cc"'
+            buildConfigField "String", "API_KEY", '"627da3346c9c459382134cb1b1889e91"'
         }
         release {
             buildConfigField "String", "BASE_URL", '"https://newsapi.org/v2/"'
-            buildConfigField "String", "API_KEY", '"c9cd499657664ae5a355ace15d7d16cc"'
+            buildConfigField "String", "API_KEY", '"627da3346c9c459382134cb1b1889e91"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -73,6 +73,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "com.google.android.material:material:$material"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
     //navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -111,6 +112,7 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-paging:$room_version"
 
     //testing
     testImplementation "junit:junit:$jUnit"

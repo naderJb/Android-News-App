@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.finder.androidnewsapp.articles.data.model.ArticleModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_pale_pale"
+        android:elevation="@dimen/fragment.news.additional.elevation"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".articles.presentation.ui.fragment.NewsAdditionalDataFragment">
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fragment.news.additional.margin.16"
+            android:paddingHorizontal="@dimen/fragment.news.additional.padding.8"
+            android:text="@{article.title}"
+            android:textAlignment="center"
+            android:textColor="@color/base.text.color"
+            android:textSize="@dimen/text.32"
+            android:textStyle="bold"
+            tools:text="Google Title" />
+
+        <ImageView
+            android:id="@+id/tvFavorite"
+            loadImage="@{article.urlToImage}"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_star" />
+
+
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/fragment.news.additional.margin.8"
+            android:text="@{article.author}"
+            android:textColor="@color/base.text.color"
+            android:textSize="@dimen/text.18"
+            tools:text="Google Inc." />
+
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/fragment.news.additional.margin.8"
+            android:text="@{article.content}"
+            android:textColor="@color/base.text.color"
+            android:textSize="@dimen/text.18"
+            tools:text="Info and content and..." />
+
+
+        <TextView
+            android:id="@+id/tvPublishedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/fragment.news.additional.margin.8"
+            android:text="@{article.publishedAt}"
+            android:textColor="@color/base.text.color"
+            android:textSize="@dimen/text.18"
+            tools:text="02-05-2023" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

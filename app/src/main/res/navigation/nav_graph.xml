@@ -2,4 +2,32 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph" />
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsFragment">
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.finder.androidnewsapp.articles.presentation.ui.fragment.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_newsAdditionalDataFragment"
+            app:destination="@id/newsAdditionalDataFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/newsAdditionalDataFragment"
+        android:name="com.finder.androidnewsapp.articles.presentation.ui.fragment.NewsAdditionalDataFragment"
+        android:label="fragment_news_additional_data"
+        tools:layout="@layout/fragment_news_additional_data" >
+        <argument
+            android:name="articleModel"
+            app:argType="com.finder.androidnewsapp.articles.data.model.ArticleModel" />
+    </dialog>
+    <dialog
+        android:id="@+id/searchFragment"
+        android:name="com.finder.androidnewsapp.articles.presentation.ui.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+</navigation>
